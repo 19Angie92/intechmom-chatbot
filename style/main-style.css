@@ -96,7 +96,6 @@ body {
   /* display:grid; */
   flex-direction: column;
   width: 80%;
-  height: 100vh;
   justify-content: space-around;
   justify-items: center;
   flex-shrink: 0;

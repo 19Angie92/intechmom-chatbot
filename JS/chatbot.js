@@ -3,21 +3,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const barraLateral = document.querySelector(".barra-lateral");
     const botonAbrirCerrar = menuLateral.querySelector("#abrir-cerrar");
     const botonAvirtual = document.getElementById("avirtual");
+    const contenedorLateral = document.getElementById("contenedor-lateral");
     barraLateral.style.display = "none";
     botonAbrirCerrar.style.display= "none";
     let barraLateralAbierta = false;
+    let estiloContenedorLateral = contenedorLateral.style.maxHeight = "280px";
 
     function guardarBarraLateral() {
         barraLateralAbierta = !barraLateralAbierta;
-
+        
         if (barraLateralAbierta) {
            
             barraLateral.style.display = "flex";
             botonAbrirCerrar.style.display = "flex";
+            estiloContenedorLateral = contenedorLateral.style.maxHeight = "100vh";
+            botonAvirtual.style.background = "url('../img/perrito_profesor_abierto.png') 50% / cover no-repeat";
+            
         } else {
             
             barraLateral.style.display = "none";
             botonAbrirCerrar.style.display = "none";
+            estiloContenedorLateral = contenedorLateral.style.maxHeight = "280px";
+            botonAvirtual.style.background = "url('../img/perrito_profesor.png') 50% / cover no-repeat";
+                      
         }
     }
     
@@ -26,24 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     botonAvirtual.addEventListener("click", guardarBarraLateral);
 });
 
-/*document.addEventListener("DOMContentLoaded", function () {
-
-const inputPregunta = document.getElementById("pregunta");
-const areaTexto = document.querySelector(".info-chatbot");
-const botonEnviar = document.getElementById("boton-enviar"); 
-
-botonEnviar.addEventListener("click", function () {
-
-  const pregunta = inputPregunta.value;
-
-
-  areaTexto.innerText = pregunta;
-
-
-  inputPregunta.value = "";
-})
-
-});*/
 
 document.addEventListener("DOMContentLoaded", function () {
     const inputPregunta = document.getElementById("pregunta");
